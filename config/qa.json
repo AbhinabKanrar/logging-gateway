@@ -1,0 +1,6 @@
+{
+  "mqtt" : {
+    "url" : "qa tcp",
+    "topic" : "test"
+  }
+}
