@@ -69,6 +69,8 @@ func main() {
 
 	go listen(uri, topic)
 
-  for{
-  }
+  timer := time.NewTicker(1 * time.Hour)
+	for t := range timer.C {
+    fmt.Println(t)
+	}
 }
