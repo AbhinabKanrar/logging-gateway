@@ -3,6 +3,7 @@ package main
 import (
   "testing"
   "net/url"
+  service "./service"
 )
 
 func TestCreateClientOptions(t *testing.T) {
@@ -12,7 +13,7 @@ func TestCreateClientOptions(t *testing.T) {
 		t.Fatal("invalid url")
 	}
 
-  if CreateClientOptions("cid", uri) == nil {
+  if service.CreateClientOptions("cid", uri) == nil {
     t.Fatal("mqtt client cant be created")
   }
 }
