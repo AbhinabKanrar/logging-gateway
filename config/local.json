@@ -1,0 +1,10 @@
+{
+	"mqtt": {
+		"url": "tcp://127.0.0.1:1883",
+		"topic": "/wrkspot/logging/#"
+	},
+	"es": {
+		"url": "http://localhost:9200",
+		"index" : "wrkspot-logging"
+	}
+}

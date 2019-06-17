@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/url"
 	"time"
+  "strings"
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 )
 
@@ -37,6 +38,6 @@ func Listen(uri *url.URL, topic string) {
 	client := Connect("logging-gateway-broker", uri)
 
 	client.Subscribe(topic, 0, func(client mqtt.Client, msg mqtt.Message) {
-		fmt.Printf("* [%s] %s\n", msg.Topic(), string(msg.Payload()))
+    go save(strings.Split(msg.Topic(),"/")[3], string(msg.Payload()))
 	})
 }
