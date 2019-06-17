@@ -36,6 +36,7 @@ func main() {
 	}
 
 	go service.Listen(uri, Config.Mqtt.Topic)
+	go service.EsInitialize(Config.Mqtt.Topic)
 
 	for{
 

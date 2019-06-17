@@ -34,7 +34,7 @@ func Connect(clientId string, uri *url.URL) mqtt.Client {
 }
 
 func Listen(uri *url.URL, topic string) {
-	client := Connect("sub-id", uri)
+	client := Connect("logging-gateway-broker", uri)
 
 	client.Subscribe(topic, 0, func(client mqtt.Client, msg mqtt.Message) {
 		fmt.Printf("* [%s] %s\n", msg.Topic(), string(msg.Payload()))
